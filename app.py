@@ -22,7 +22,7 @@ class Task(db.Model):
 db.create_all()
 
 #----db is creted--------now
-
+#app
 @app.route('/')
 def task_list():
     tasks=Task.query.all()
