@@ -21,7 +21,7 @@ class Task(db.Model):
 
 db.create_all()
 
-#----db is creted--------
+#----db is creted--------now
 
 @app.route('/')
 def task_list():
