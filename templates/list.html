@@ -1,0 +1,30 @@
+<body style="background-color: rgb(236, 232, 185);">
+    <div class='label'>
+        <h1> TODO App</h1>
+
+        <form action="/task" method="POST">
+            <p>
+                <input type="text" name='content' required>
+            </p>
+            <input type='submit' value="Add Task">
+        </form>
+        <ol>
+            {% for task in tasks %}
+                <li>
+                    {% if task.done %}
+                    <strike>
+                    {% endif %}  
+                    {{task.content}} 
+                    {% if task.done %}
+                        </strike>
+                    {% endif %}
+                    <a href="/done/{{task.id}}">Done</a>
+                    <a href="/delete/{{task.id}}">Delete</a>
+                        
+                </li>
+            {% endfor %}    
+        </ol>
+
+    </div>
+
+</body>
